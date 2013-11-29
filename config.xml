@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <widget id="com.alexbeale.1st"
-        version="0.0.1">
+        version="0.0.1"
+        versionCode="10">
       <name>1st Attempt - Calendar</name>
       <description>My 1st attempt</description>
 </widget>
