@@ -1,4 +1,4 @@
-body {
+/*body {
 	background-color: #333;
 	font-size: 22px;
 	font-family: Calibri;
@@ -56,9 +56,6 @@ td {
 	cursor: pointer;
 	width: 135px;
 	height: 113px;
-	-webkit-user-select: none; /* Chrome/Safari */        
-	-moz-user-select: none; /* Firefox */
-	-ms-user-select: none; /* IE10+ */
 }
 
 td:hover {
@@ -95,4 +92,4 @@ td:hover {
 	margin-top: -35px;
 	margin-left: -250px;
 	box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.5);
-}
+}*/
