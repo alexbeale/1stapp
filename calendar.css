@@ -1,4 +1,4 @@
-button, pre {
+pre, h3 {
 	display: inline;
 }
 
@@ -27,4 +27,9 @@ td {
 
 .today {
 	background-color: #BDD6A7;
+}
+
+#previous, #next {
+	display: inline;
+	cursor: pointer;
 }
