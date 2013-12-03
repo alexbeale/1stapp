@@ -22,10 +22,6 @@ table {
 	-webkit-user-select: none;
 }
 
-th {
-	background-color: #DBDBDB;
-}
-
 td {
 	border: thin solid black;
 	text-align: left;
@@ -38,7 +34,7 @@ td {
 }
 
 .today {
-	background-color: #BDD6A7;
+	background-color: #BABABA;
 }
 
 #previous, #next {
