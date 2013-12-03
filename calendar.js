@@ -1,6 +1,9 @@
 $(document).ready(function () {
 	build_calendar();
 	change_month();
+	$('#color_scheme').on('change', function() {
+		change_color($('#color_scheme').val());
+	});
 });
 
 var date = new Date();
@@ -53,7 +56,7 @@ var get_Month = function(date) {
 
 var populate_dates = function(date) {
 	$('td').empty();
-	$('td').removeClass("today");
+	color_today();
 	var selected_tr = $('#first-row');
 	var selected_td = selected_tr.children('td:first');
 	var date_number = 0;
@@ -77,8 +80,10 @@ var populate_dates = function(date) {
 				break;
 			selected_td.text(j);
 			var today = new Date();
-			if (j == date.getDate() && $('#month').text() == get_Month(today) && $('#year').text() == today.getFullYear())
+			if (j == date.getDate() && $('#month').text() == get_Month(today) && $('#year').text() == today.getFullYear()) {
 				selected_td.addClass("today");
+				color_today();
+			}
 			selected_td = selected_td.next();
 		}
 		selected_tr = selected_tr.next();
@@ -93,8 +98,10 @@ var populate_dates = function(date) {
 			if (j > days)
 				break;
 			selected_td.text(j);
-			if (j == date.getDate() && $('#month').text() == get_Month(date) && $('#year').text() == date.getFullYear())
+			if (j == date.getDate() && $('#month').text() == get_Month(date) && $('#year').text() == date.getFullYear()) {
 				selected_td.addClass("today");
+				color_today();
+			}
 			selected_td = selected_td.next();
 		}
 	}
@@ -118,4 +125,37 @@ var change_month = function() {
 		$('#title').html('<span id="month">' + get_Month(date) + '</span> <span id="year">' + date.getFullYear() + '</span>');
 		populate_dates(date);
 	});
+};
+
+var change_color = function(value) {
+	if (value == "light") {
+		$('table').css('background-color', '#FFF');
+		$('td').css('color', '#000');
+		$('td').css('border-color', '#000');
+		$('.today').css('background-color', '#BDD6A7');
+	}
+	if (value == "dark") {
+		$('table').css('background-color', '#000');
+		$('td').css('color', '#FFF');
+		$('td').css('border-color', '#FFF');
+		$('.today').css('background-color', '#987BAA');
+	}
+	if (value == "colorful") {
+		$('table').css('background-color', '#81AFD4');
+		$('td').css('color', '#474747');
+		$('td').css('border-color', '#FFF');
+		$('.today').css('background-color', '#F6905D');
+	}
+};
+
+var color_today = function() {
+	var today = new Date();
+	if ($('#month').text() == get_Month(today)) {
+		var value = $('#color_scheme').val();
+		change_color(value);
+	}
+	else {
+		$('.today').css('background-color', $('td').css('background-color'));
+		$('.today').removeClass('today');
+	}
 };
