@@ -131,19 +131,25 @@ var change_color = function(value) {
 	if (value == "light") {
 		$('table').css('background-color', '#FFF');
 		$('td').css('color', '#000');
+		$('th').css('color', '#000');
 		$('td').css('border-color', '#000');
-		$('.today').css('background-color', '#BDD6A7');
+		$('table').css('border-color', '#000');
+		$('.today').css('background-color', '#BABABA');
 	}
 	if (value == "dark") {
 		$('table').css('background-color', '#000');
 		$('td').css('color', '#FFF');
+		$('th').css('color', '#5BCC3B');
 		$('td').css('border-color', '#FFF');
-		$('.today').css('background-color', '#987BAA');
+		$('table').css('border-color', '#FFF');
+		$('.today').css('background-color', '#5BCC3B');
 	}
 	if (value == "colorful") {
 		$('table').css('background-color', '#81AFD4');
-		$('td').css('color', '#474747');
+		$('td').css('color', '#6E361F');
+		$('th').css('color', '#6E361F');
 		$('td').css('border-color', '#FFF');
+		$('table').css('border-color', '#FFF');
 		$('.today').css('background-color', '#F6905D');
 	}
 };
