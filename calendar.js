@@ -1,30 +1,12 @@
 $(document).ready(function () {
 	build_calendar();
-	add_link();
-	next_month();
+	change_month();
 });
 
 var date = new Date();
 
-var add_link = function() {
-	var clicks = 0;
-	$(".today").on("click", function () {
-		$(this).toggleClass('done');
-		clicks++;
-		if (clicks % 2 == 0) {
-			$('body').prepend('<div id="congrats"><p>Aww... it&rsquo;s OK. It happens to the best of us.</p></div>');
-			$('#congrats').fadeIn();
-			$('#congrats').delay(2200).fadeOut();
-		} else {
-			$('body').prepend('<div id="congrats"><p>Congratulations! You&rsquo;ve added a link to the chain!</p></div>');
-			$('#congrats').fadeIn();
-			$('#congrats').delay(2200).fadeOut();
-		}
-	});
-}
-
 var build_calendar = function() {
-	$('#calendar-title').html('<button id="previous">&larr;</button>' + '<pre>  </pre>' + get_Month(date) + " " + date.getFullYear() + '<pre>  </pre>' + '<button id="next">&rarr;</button>');
+	$('#title').html('<span id="month">' + get_Month(date) + '</span> <span id="year">' + date.getFullYear() + '</span>');
 	populate_dates(date);
 };
 
@@ -71,6 +53,7 @@ var get_Month = function(date) {
 
 var populate_dates = function(date) {
 	$('td').empty();
+	$('td').removeClass("today");
 	var selected_tr = $('#first-row');
 	var selected_td = selected_tr.children('td:first');
 	var date_number = 0;
@@ -93,7 +76,8 @@ var populate_dates = function(date) {
 			if (j > days)
 				break;
 			selected_td.text(j);
-			if (j == date.getDate())
+			var today = new Date();
+			if (j == date.getDate() && $('#month').text() == get_Month(today) && $('#year').text() == today.getFullYear())
 				selected_td.addClass("today");
 			selected_td = selected_td.next();
 		}
@@ -109,21 +93,29 @@ var populate_dates = function(date) {
 			if (j > days)
 				break;
 			selected_td.text(j);
-			if (j == date.getDate())
+			if (j == date.getDate() && $('#month').text() == get_Month(date) && $('#year').text() == date.getFullYear())
 				selected_td.addClass("today");
 			selected_td = selected_td.next();
 		}
 	}
+	else
+		$('#new-row').remove();
 };
 
 var days_in_month = function(date) {
     return new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate();
 }
 
-var next_month = function() {
+var change_month = function() {
 	$('#next').on('click', function() {
 		date.setMonth(date.getMonth() + 1);
-		$('#calendar-title').html('<button id="previous">&larr;</button>' + '<pre>  </pre>' + get_Month(date) + " " + date.getFullYear() + '<pre>  </pre>' + '<button id="next">&rarr;</button>');
+		$('#title').html('<span id="month">' + get_Month(date) + '</span> <span id="year">' + date.getFullYear() + '</span>');
+		populate_dates(date);
+	});
+
+	$('#previous').on('click', function() {
+		date.setMonth(date.getMonth() - 1);
+		$('#title').html('<span id="month">' + get_Month(date) + '</span> <span id="year">' + date.getFullYear() + '</span>');
 		populate_dates(date);
 	});
 };
