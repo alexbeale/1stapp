@@ -1,3 +1,7 @@
+* {
+	width: 100%;
+}
+
 button, pre {
 	display: inline;
 }
