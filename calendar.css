@@ -1,13 +1,5 @@
-html, body {
-	height: 100%;
-}
-
 button, pre {
 	display: inline;
-}
-
-h1 {
-	text-align: center;
 }
 
 table {
