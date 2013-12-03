@@ -1,8 +1,13 @@
+body {
+	background-color: #A1A1A1;
+}
+
 pre, h3 {
 	display: inline;
 }
 
 table {
+	background-color: #FFF;
 	position: absolute;
 	height: 100%;
 	width: 100%;
@@ -13,6 +18,8 @@ table {
 	right: 0;
 	top: 0;
 	bottom: 0;
+	text-shadow: none;
+	-webkit-user-select: none;
 }
 
 th {
@@ -23,6 +30,11 @@ td {
 	border: thin solid black;
 	text-align: left;
 	vertical-align: top;
+	color: #000;
+}
+
+.calendar {
+	background-color: #A1A1A1;
 }
 
 .today {
