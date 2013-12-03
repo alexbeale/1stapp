@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Don't Break The Chain</title>
+	<title>Calendar</title>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" href="calendar.css">
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css" />
@@ -14,7 +14,20 @@
 		<table>
 			<tbody>
 				<tr>
-				  	<th id="calendar-title" colspan="7"><div id="previous">&larr;</div><pre>  </pre><h3 id="title"></h3><pre>  </pre><div id="next">&rarr;</div></th>
+				  	<th id="calendar-title" colspan="7">
+				  		<div id="previous">&larr;</div>
+				  		<pre>  </pre>
+				  		<h3 id="title"></h3>
+				  		<pre>  </pre>
+				  		<div id="next">&rarr;</div>
+				  		<pre>   </pre>
+				  		<p>Color Scheme: </p>
+				  		<select id="color_scheme">
+				  			<option value="light" selected="">Light</option>
+				  			<option value="dark">Dark</option>
+				  			<option value="colorful">Colorful</option>
+				  		</select>
+			  		</th>
 				</tr>
 				<tr>
 					<th>s</th><th>m</th><th>t</th><th>w</th><th>h</th><th>f</th><th>s</th>
