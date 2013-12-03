@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<widget id="com.alexbeale.first"
+<widget id="com.alexbeale.flashlight"
         version="0.0.1"
-        versionCode="1">
-      <name>1st Attempt - Calendar</name>
-      <description>My 1st attempt</description>
+        versionCode="1"
+        xmlns:gap = "http://phonegap.com/ns/1.0">
+      <name>Flashlight</name>
+      <description>A flashlight app for smartphones</description>
+      <gap:plugin name="nl.x-services.plugins.flashlight" />
 </widget>
