@@ -6,7 +6,19 @@ h1 {
 	text-align: center;
 }
 
-.calendar {
+table {
 	width: 100%;
-	margin: auto;
+	margin: 0 auto;
+	border-collapse: collapse;
+	border: thin solid black;
+}
+
+th {
+	background-color: #DBDBDB;
+}
+
+td {
+	border: thin solid black;
+	text-align: left;
+	vertical-align: top;
 }
